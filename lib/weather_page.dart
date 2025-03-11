@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_app/config/config.dart';
 
 class WeatherPage extends StatefulWidget {
   const WeatherPage({super.key});
@@ -14,7 +15,7 @@ class WeatherPage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<WeatherPage> with SingleTickerProviderStateMixin {
-  final _weatherService = WeatherService('ae0f1131aa99c5f138ee00baabda3820');
+  final _weatherService = WeatherService(Config.weatherApiKey);
   Weather? _weather;
   late AnimationController _controller;
   bool _isLoading = true;
@@ -158,7 +159,7 @@ class _WeatherPageState extends State<WeatherPage> with SingleTickerProviderStat
                       // Greeting and Location
                       Text(
                         _getGreeting(),
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w600,
                           color: Colors.white.withOpacity(0.9),
@@ -175,7 +176,7 @@ class _WeatherPageState extends State<WeatherPage> with SingleTickerProviderStat
                           const SizedBox(width: 4),
                           Text(
                             _weather?.cityName ?? "Loading city...",
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 18,
                               color: Colors.white.withOpacity(0.8),
                               fontWeight: FontWeight.w500,
@@ -232,7 +233,7 @@ class _WeatherPageState extends State<WeatherPage> with SingleTickerProviderStat
                               children: [
                                 Text(
                                   '${_weather?.temperature.round()}',
-                                  style: GoogleFonts.poppins(
+                                  style: const TextStyle(
                                     fontSize: 80,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
@@ -240,7 +241,7 @@ class _WeatherPageState extends State<WeatherPage> with SingleTickerProviderStat
                                 ),
                                 Text(
                                   '°C',
-                                  style: GoogleFonts.poppins(
+                                  style: TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white.withOpacity(0.8),
@@ -257,7 +258,7 @@ class _WeatherPageState extends State<WeatherPage> with SingleTickerProviderStat
                               ),
                               child: Text(
                                 _weather?.mainCondition?.toUpperCase() ?? "LOADING...",
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white.withOpacity(0.9),
@@ -275,7 +276,7 @@ class _WeatherPageState extends State<WeatherPage> with SingleTickerProviderStat
                       Center(
                         child: Text(
                           DateFormat('EEEE, d MMMM').format(DateTime.now()),
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: 16,
                             color: Colors.white.withOpacity(0.8),
                             fontWeight: FontWeight.w500,
