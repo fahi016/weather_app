@@ -4,12 +4,12 @@ A beautiful, minimal weather application built with Flutter that shows current w
 
 ## Features
 
-- 🌡️ Real-time weather information
-- 📍 Location-based weather data
-- 🎨 Dynamic UI that changes based on time of day
-- 💫 Beautiful animations for different weather conditions
-- 🔄 Pull-to-refresh functionality
-- 🌈 Modern, minimal design with glassmorphism effects
+-  Real-time weather information
+-  Location-based weather data
+-  Dynamic UI that changes based on time of day
+-  Beautiful animations for different weather conditions
+-  Pull-to-refresh functionality
+-  Modern, minimal design with glassmorphism effects
 
 ## Screenshots
 
