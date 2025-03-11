@@ -40,9 +40,9 @@ cd weather_app
 flutter pub get
 ```
 
-4. Update the API key in `lib/services/weather_service.dart`
+4. Update the API key in `.env`
 ```dart
-final _weatherService = WeatherService('your_api_key_here');
+WEATHER_API_KEY='your_api_key_here'
 ```
 
 5. Run the app
